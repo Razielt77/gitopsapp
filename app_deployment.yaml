@@ -14,7 +14,7 @@ spec:
         app: gitopsapp
     spec:
       containers:
-        - image: gcr.io/demochat101/express-microservice:42af3e1
+        - image: gcr.io/demochat101/express-microservice:3ddf367
           name: gitopsapp
           ports:
             - containerPort: 3000
