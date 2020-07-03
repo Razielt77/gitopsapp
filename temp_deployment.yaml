@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: temp-deployment
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: temp-svc
+  template:
+    metadata:
+      labels:
+        app: temp-svc
+    spec:
+      containers:
+        - image: gcr.io/demochat101/express-microservice:643dea9
+          name: temp-svc
+          ports:
+            - containerPort: 3000
