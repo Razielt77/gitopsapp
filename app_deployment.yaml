@@ -1,18 +1,18 @@
-metadata:	metadata:
-  name: gitopsapp	  name: gitopsapp
+metadata:
+  name: gitopsapp
 spec:	spec:
   replicas: 2	
   revisionHistoryLimit: 3	
   selector:	
     matchLabels:	
       app: gitopsapp	
-  template:	  template:
+  template:
     metadata:	
       labels:	
         app: gitopsapp	
-    spec:	    spec:
-      containers:	      containers:
-        - image: gcr.io/demochat101/express-microservice:b422451	      - image: gcr.io/demochat101/express-microservice:ee63721
+    spec:
+      containers:
+        - image: gcr.io/demochat101/express-microservice:b422451
           name: gitopsapp	
           ports:	
             - containerPort: 3000
