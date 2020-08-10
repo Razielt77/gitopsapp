@@ -1,9 +1,19 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: gitopsapp
-spec:
-  template:
-    spec:
-      containers:
-      - image: gcr.io/demochat101/express-microservice:ee63721
+metadata:	metadata:
+  name: gitopsapp	  name: gitopsapp
+spec:	spec:
+  replicas: 2	
+  revisionHistoryLimit: 3	
+  selector:	
+    matchLabels:	
+      app: gitopsapp	
+  template:	  template:
+    metadata:	
+      labels:	
+        app: gitopsapp	
+    spec:	    spec:
+      containers:	      containers:
+        - image: gcr.io/demochat101/express-microservice:b422451	      - image: gcr.io/demochat101/express-microservice:ee63721
+          name: gitopsapp	
+          ports:	
+            - containerPort: 3000
+            
